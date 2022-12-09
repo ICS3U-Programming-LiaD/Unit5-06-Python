@@ -4,19 +4,21 @@
 # This program rounds the number the user input
 # to the decimal place the user wants it rounded to
 
-def round_decimal(decimal_place, rounding_num ):
+
+def round_decimal(decimal_place, rounding_num):
 
     # Pass by Reference
     Number_var = [rounding_num]
     Number_var.append(rounding_num)
 
     # Doing the math to round it to the decimal place the user wants
-    ten_power = 10 ** decimal_place
-    total = Number_var[0] * ten_power + 0.5 
-    total= int(total)
+    ten_power = 10**decimal_place
+    total = Number_var[0] * ten_power + 0.5
+    total = int(total)
     Number_var[0] = total / ten_power
-    
+
     print(Number_var[0])
+
 
 def main():
     # Getting the numbers from the user
@@ -32,11 +34,16 @@ def main():
             print("You can't round to negative decimal places")
         else:
             # Displaying the rounded number to the user
-            print("{} rounded to {} decimal places is".format(rounding_num, decimal_place)) 
-            round_decimal(decimal_place,rounding_num,)
+            print(
+                "{} rounded to {} decimal places is".format(rounding_num, decimal_place)
+            )
+            round_decimal(
+                decimal_place,
+                rounding_num,
+            )
 
     except ValueError:
-          print("please enter a valid input")
+        print("Please enter a valid input")
 
 
 if __name__ == "__main__":
